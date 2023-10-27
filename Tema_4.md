@@ -21,252 +21,283 @@
 ### Напишите функцию, которая выполняет любые арифметические действия и выводит результат в консоль. Вызовите функцию используя “точку входа”.
 
 ```python
-one = int(input('введите значение первой переменной: '))
-two = int(input('введите значение второй переменной: '))
-if one >= two:
-    print('выполняется')
-else:
-    print('не выполняется')
+def main():
+    print(123-54)
+
+if __name__ == '__main__':
+    main()
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_1(1).png)
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_1(2).png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_1.png)
 
 ## Лабораторная работа №2
 ### Напишите функцию, которая выполняет любые арифметические действия, возвращает при помощи return значение в место, откуда вызывали функцию. Выведите результат в консоль. Вызовите функцию используя “точку входа”.
 
 ```python
-one = int(input('введите значение переменной: '))
-if one < 0:
-    print('переменная меньше 0')
-elif 0 < one < 10:
-    print('переменная больше 0 и меньше 10')
-else:
-    print('переменная больше 10')
+def main():
+    return(123-54)
+
+if __name__ == '__main__':
+    print(main())
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_2(1).png)
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_2(2).png)
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_2(3).png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_2.png)
 
 ## Лабораторная работа №3
 ### Напишите функцию, в которую передаются два аргумента, над ними производится арифметическое действие, результат возвращается туда, откуда эту функцию вызывали. Выведите результат в консоль. Вызовите функцию в любом небольшом цикле.
 ```python
-numbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]
-one = int(input('введите значение переменной: '))
-if one in numbers:
-
-    print('переменная есть в данном массиве')
-else:
-    print('переменной нет в данном массиве')
+def main(one, two):
+    result = one + two
+    return result
+for i in range(1):
+    x= 234
+    y= 54
+    print(main(x, y))
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_3(1).png)
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_3(2).png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_3.png)
 
 ## Лабораторная работа №4
 ### Напишите функцию, на вход которой подается какое-то изначальное неизвестное количество аргументов, над которыми будет производится арифметические действия. Для выполнения задания необходимо использовать кортеж “*args”. На скриншоте ниже приведен пример такой программы с комментариями.
 ```python
-numbers = [1, 2, 3, 5, 6, 7, 8, 11, 13, 14, 17, 19, 23]
-one = int(input('введите значение переменной: '))
-if one in numbers:
-    if one % 2 == 0:
-        print('переменная четная и есть в данном массиве')
-    else:
-        print('переменная нечетная и есть в данном массиве')
-else:
-    print(f"переменной нет в данном массиве и она равна {one}")
+def main(x, *args):
+    one = x
+    two = sum(args)
+    three = int(len(args))
+    print(f"one = {one}\ntwo = {two}\nthree = {three}")
+    return x - sum(args)/int(len(args))
+if __name__ == '__main__':
+    result = main(23, 0, 2, 1, -4, -10, 6, 0, 11)
+    print(f"result = {result}")
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_4(1).png)
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_4(2).png)
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_4(3).png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_4.png)
 
 ## Лабораторная работа №5
 ### Напишите функцию, которая на вход получает кортеж “**kwargs” и при помощи цикла выводит значения, поступившие в функцию.
 
 ```python
-for i in range(10):
-    print('i= ', i)
-    if i == 0:
-        i += 2
-    if i == 1 or i == 4:
-        continue
-    if i == 2 or i == 3:
-        print('переменная равна 2 или 3')
-    elif i in [5, 6, 7, 8]:
-        print('переменная равна 5, 6 или 7, 8')
-    else:
-        break
+def main(**kwargs):
+   for i in kwargs.items():
+       print(i[0], i[1])
+
+if __name__ == '__main__':
+   main(x=[1, 2, 3], y=[4, 5, 6], z=[0, 0, 0], w=[-1, -2, -3])
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_5.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_5.png)
 
 ## Лабораторная работа №6
 ### Напишите две функции. Первая – получает в виде параметра “**kwargs”. Вторая считает среднее арифметическое из значений первой функции. Вызовите первую функцию используя “точку входа” и минимум 4 аргумента.
 
 ```python
-string = input('введите строку: ')
-letter = input('введите букву для поиска: ')
-for i in string:
-    if i == letter:
-        index = string.find(letter)
-        print(f"буква '{letter}' есть в строке под {index} индексом")
-        break
-else:
-    print(f"буквы '{letter}' нет в строке")
+def main(**kwargs):
+   for i, j in kwargs.items():
+       print(f"{i}. Mean = {mean(j)}")
+
+def mean(data):
+    return sum(data) / float(len(data))
+
+if __name__ == '__main__':
+   main(x=[1, 2, 3], y=[4, 5, 6], z=[0, 0, 0], w=[-1, -2, -3])
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_6.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_6.png)
 
 ## Лабораторная работа №7
 ### Создайте дополнительный файл .py. Напишите в нем любую функцию, которая будет что угодно выводить в консоль, но не вызывайте ее в нем. Откройте файл main.py, импортируйте в него функцию из нового файла и при помощи “точки входа” вызовите эту функцию.
 
 ```python
-value = 100
-for i in range(100, -1, -1):
-    value -= 1
-    print(i, value)
+def say_hello():
+    print('Hello world!')
+```
+
+```python
+from Lab4_7 import say_hello
+if __name__ == '__main__':
+    say_hello()
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_7.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_7.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_7(2).png)
 
 ## Лабораторная работа №8
 ### Напишите программу, которая будет выводить корень, синус, косинус полученного от пользователя числа
 
 ```python
-value = 0
-while value < 100:
-    if value == 0:
-        value += 10
-    elif value // 5 > 1:
-        value *= 3
-    else:
-        value -= 1
-    print(value)
+import math
+def main():
+    value = int(input('введите целое число: '))
+    print(math.sqrt(value))
+    print(math.sin(value))
+    print(math.cos(value))
 
+if __name__ == '__main__':
+    main()
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_8.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_8.png)
 
 ## Лабораторная работа №9
 ### Напишите программу, которая будет рассчитывать какой день недели будет через n-нное количество дней, которые укажет пользователь.
 
 ```python
-value = 0
-for i in range(10):
-    for j in range(10):
-        if i != j:
-            value += j
-        else:
-            value -= 1
-print(value)
+from datetime import datetime as dt
+from datetime import timedelta as td
+
+def main():
+    print(f"сегодня {dt.today().date()}.\nдень недели - {dt.today().isoweekday()}.")
+    i = int(input('введите количество дней: '))
+    today = dt.today()
+    result = today + td(days=i)
+    print(f"через {i} дней будет {result.date()}.\nдень недели - {result.isoweekday()}.")
+if __name__ == '__main__':
+    main()
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_9.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_9.png)
 
 ## Лабораторная работа №10
 ### Напишите программу с использованием глобальных переменных, которая будет считать площадь треугольника или прямоугольника в зависимости от того, что выберет пользователь. Получение всей необходимой информации реализовать через input(), а подсчет площадей выполнить при помощи функций. Результатом программы будет число, равное площади, необходимой фигуры.
 
 ```python
-array = [2, 4, 6, 8, 10, 12, 13]
-flag = False
-for value in array:
-    if value % 2 == 1:
-        flag = True
-if flag is True:
-    print('В массиве есть нечетное число')
-else:
-    print('В массиве нет нечетных чисел')
+global result
+
+def rectangle():
+    a = float(input("Ширина: "))
+    b = float(input("Высота: "))
+    global result
+    result = a * b
+
+def triangle():
+    a = float(input("Основание: "))
+    h = float(input("Высота: "))
+    global result
+    result = 0.5 * a * h
+
+figure = input("1-прямоугольник, 2-трегольник: ")
+
+if figure == '1':
+    rectangle()
+elif figure == '2':
+    triangle()
+
+print(f"Площадь: {result}")
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/lab3_10.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/lab4_10.png)
 
 ## Самостоятельная работа №1
 ### Дайте подробный комментарий для кода, написанного ниже. Комментарий нужен для каждой строчки кода, нужно описать что она делает.
 
 ```python
-j = 1
-for i in range(2):
-    j *= 5
-    j += 1
-print(j)
+from datetime import datetime #импортируем функцию из модуля datetime для работы с датой и временем
+from math import sqrt #импортируем функцию из модуля math для вычисления квадратного корня
+
+def main(**kwargs): #основная функция, принимающая аргументы как словарь с ключами и значениями
+    for key in kwargs.items(): #итерируемся по элементам словаря
+        result = sqrt(key[1][0] ** 2 + key[1][1] ** 2) #вычисляем евклидово расстояние для значения (key[1])
+        print(result) #выводим результат на экран
+if __name__ == '__main__': #точка входа
+    start_time = datetime.now() #запоминаем текущее время перед выполнением кода
+    main( one=[10, 3], two=[5, 4], three=[15, 13], four=[93, 53], five=[133, 15] )#вызываем функцию main с заданными аргументами
+    time_costs = datetime.now() - start_time #вычисляем время, затраченное на выполнение кода
+    print(f"Время выполнения программы - {time_costs}") #вывдоим время выполнения программы
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/Tema3_1.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/Tema4_1.png)
   
 ## Самостоятельная работа №2
 ### Напишите программу, которая будет заменять игральную кость с 6 гранями. Если значение равно 5 или 6, то в консоль выводится «Вы победили», если значения 3 или 4, то вы рекурсивно должны вызвать эту же функцию, если значение 1 или 2, то в консоль выводится «Вы проиграли». При этом каждый вызов функции необходимо выводить в консоль значение “кубика”. Для выполнения задания необходимо использовать стандартную библиотеку random. Программу нужно написать, используя одну функцию и “точку входа”
 
 ```python
-line = "Hello World"
-for letter in line[::-1]:
-    print(letter)
+import random
+
+def roll_dice():
+    dice = random.randint(1, 6)
+    print(f"Кубик: {dice}")
+
+    if dice in [5, 6]:
+        print("Вы победили")
+    elif dice in [3, 4]:
+        print("Перебрасываем кубик")
+        roll_dice()
+    else:
+        print("Вы проиграли")
+
+if __name__ == '__main__':
+    roll_dice()
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/Tema3_2.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/Tema4_2(1).png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/Tema4_2(2).png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/Tema4_2(3).png)
 
 ## Вывод
-  Так как я уже использовал функцию '[::-1]' во время второй темы, то я закрепил знания о принципе её работы
+  Я разобрался как работает функция random в python
   
 ## Самостоятельная работа №3
 ### Напишите программу, которая будет выводить текущее время, с точностью до секунд на протяжении 5 секунд. Программу нужно написать с использованием цикла. Подсказка: необходимо использовать модуль datetime и time, а также вам необходимо как-то “усыплять” программу на 1 секунду.
 
 ```python
-number = int(input('введите целое число в диапазоне от 0 до 10: '))
-if 0 <= number <= 3:
-    print('число в диапазоне от 0 до 3 включительно')
-elif 3 < number < 6:
-    print('число в диапазоне от 3 до 6')
-elif 6 <= number <= 10:
-    print('число в диапазоне от 6 до 10 включительно')
-else:
-    print('число находиться не в заданом диапазне')
+import datetime
+import time
+
+end_time = datetime.datetime.now() + datetime.timedelta(seconds=5)
+while datetime.datetime.now() < end_time:
+    current_time = datetime.datetime.now()
+    formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
+    print(f"Текущее время: {formatted_time}")
+    time.sleep(1)
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/Tema3_3(1).png)
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/Tema3_3(2).png)
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/Tema3_3(3).png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/Tema4_3.png)
+
+## Вывод
+  Я попрактиковался в работе с датой и временем
 
 ## Самостоятельная работа №4
 ### Напишите программу, которая считает среднее арифметическое от аргументов вызываемое функции, с условием того, что изначальное количество этих аргументов неизвестно. Программу необходимо реализовать используя одну функцию и “точку входа”.
 
 ```python
-line = input('введите предложение на английском: ').lower()
-sum = 0
-for letter in line:
-    if letter == 'a' or letter == 'e' or letter == 'i' or letter == 'o' or letter == 'u':
-        sum += 1
-sentence = line.replace('ugly', 'beauty')
-print(f"длина предложения {len(line)} символов. \nпредложение в нижнем регистре: {line} \nколичество гласных равно {sum}."
-      f"\nпредложение с заменнёными словами: {sentence} \nначинается ли предложение на 'the': {line.startswith('the')}"
-      f"\nзаканчивается ли предложение на 'end': {line.endswith('end')}")
+def average_values(*args):
+    average = sum(args) / len(args)
+    print(f"Аргументы: {args}")
+    print(f"Среднее арифметическое: {average}")
+
+if __name__ == '__main__':
+    average_values(1, 2, 3, 4, 5, 6, 0, 0, 0)
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/Tema3_4(1).png)
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/Tema3_4(2).png)
-
-## Вывод
-  Я попрактиковался со строками и методами их преобразования
-  
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/Tema4_4.png)
+ 
 ## Самостоятельная работа №5
 ### Создайте два Python файла, в одном будет выполняться вычисление площади треугольника при помощи формулы Герона (необходимо реализовать через функцию), а во втором будет происходить взаимодействие с пользователем (получение всей необходимой информации и вывод результатов). Напишите эту программу и выведите в консоль полученную площадь.
 
 ```python
-string = 'hello'
-counter = 0
-values = [0, 2, 4, 6, 8, 10]
-while 'world' not in string:
-    memory = string
-    if counter in values:
-        string = string + 'world'
-    print(string)
-    if counter < 10:
-        string = memory
-    counter += 1
+from math import sqrt
+def square():
+    a = float(input('введите значение стороны a:'))
+    b = float(input('введите значение стороны b:'))
+    c = float(input('введите значение стороны c:'))
+    p= (a + b + c) / 2
+    S= p * (p - a) * (p - b) * (p - c)
+    if S <= 0:
+        print('треугольника с такими сторонами не существует')
+    else:
+        square_of_triangle= sqrt(S)
+        print(f"Площадь треугольника равна {square_of_triangle}")
+```
+
+```python
+from Tema4_5 import square
+if __name__ == '__main__':
+    square()
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_3/pic/Tema3_5.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/Tema4_5(1).png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/Tema4_5(2).png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_4/pic/Tema4_5(3).png)
 
 ## Вывод
-Я попрактиковался в составление кода из готовых строчек
+Я попрактиковался в работе с несколькими файлами
