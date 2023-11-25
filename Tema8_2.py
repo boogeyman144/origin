@@ -1,0 +1,10 @@
+from Tema8 import ElectricCar
+my_electric_car = ElectricCar("Tesla", "Model S", 2022, 100)
+my_electric_car.check_status()
+my_electric_car.start_engine()
+my_electric_car.drive(80)
+my_electric_car.check_status()
+my_electric_car.charge_battery(50)
+my_electric_car.drive(120)
+my_electric_car.stop_engine()
+my_electric_car.check_status()

@@ -1,0 +1,18 @@
+from Tema8 import Car
+from Tema8 import ElectricCar
+my_car = Car("Toyota", "Corolla", 2020, 20)
+print(my_car.get_brand())
+print(my_car.get_fuel_level())
+my_car.start_engine()
+my_car.drive(50)
+print(my_car.get_fuel_level())
+print(my_car.get_mileage())
+my_car.stop_engine()
+my_electric_car = ElectricCar("Tesla", "Model S", 2022, 100)
+print(my_electric_car.get_brand())
+print(my_electric_car.get_battery_level())
+my_electric_car.start_engine()
+my_electric_car.drive(80)
+print(my_electric_car.get_battery_level())
+print(my_electric_car.get_mileage())
+my_electric_car.stop_engine()

@@ -1,0 +1,10 @@
+from Tema8 import Car
+my_car = Car("Toyota", "Corolla", 2020, 20)
+my_car.check_status()
+my_car.start_engine()
+my_car.drive(50)
+my_car.check_status()
+my_car.refuel(10)
+my_car.drive(30)
+my_car.stop_engine()
+my_car.check_status()
