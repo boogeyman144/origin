@@ -51,5 +51,5 @@ with open("fib.txt", "w") as file:
         file.write(str(num) + "\n")
 ```
 ### Результат.
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_10/Pic/Tema11_2.png)
-![Меню](https://github.com/boogeyman144/origin/blob/Тема_10/Pic/Tema11_2(2).png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_11/Pic/Tema11_2.png)
+![Меню](https://github.com/boogeyman144/origin/blob/Тема_11/Pic/Tema11_2(2).png)
